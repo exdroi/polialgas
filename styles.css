@@ -100,44 +100,23 @@ h4,
     /* WhatsApp color */
     color: white;
     border: none;
-    border-radius: 50px;
+    border-radius: 8px;
+    /* Diseño más plano */
     padding: 15px 25px;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
     z-index: 1000;
     display: flex;
     align-items: center;
     gap: 10px;
     transition: var(--transition);
-    animation: bounce 2s infinite;
 }
 
 .floating-btn:hover {
-    transform: scale(1.05) translateY(-5px);
     background-color: #1ebe57;
-    animation: none;
 }
 
-@keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-10px);
-    }
-
-    60% {
-        transform: translateY(-5px);
-    }
-}
 
 /* Hero Section */
 .hero-section {
@@ -689,9 +668,157 @@ h4,
     }
 
     .floating-btn {
+        border-radius: var(--border-radius);
+        background-color: var(--accent-green);
         bottom: 20px;
         right: 20px;
         padding: 12px 20px;
         font-size: 1rem;
+    }
+}
+
+/* --- MULTI-PAGE ADDITIONS --- */
+.page-header {
+    padding: 60px 0 30px;
+    background-color: var(--primary-dark);
+    color: white;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.content-section {
+    padding: 50px 0;
+    background-color: var(--white);
+}
+
+/* Data Bars (Ciencia) */
+.data-metric {
+    margin-bottom: 30px;
+}
+
+.data-metric h4 {
+    margin-bottom: 10px;
+    color: var(--primary-green);
+}
+
+.data-bar-wrapper {
+    margin-bottom: 15px;
+    background: #E8F5E9;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+    display: flex;
+}
+
+.data-bar {
+    height: 100%;
+    background-color: var(--accent-green);
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+.data-bar.control {
+    background-color: #9E9E9E;
+}
+
+.data-label {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Table (Negocio) */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+    background-color: var(--primary-green);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #F9FCFA;
+}
+
+/* Extra Responsive Wrappers */
+@media (max-width: 768px) {
+
+    .data-table,
+    .data-table tbody,
+    .data-table tr,
+    .data-table td,
+    .data-table th {
+        display: block;
+        width: 100%;
+    }
+
+    .data-table th {
+        text-align: center;
+    }
+
+    .data-table td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .data-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .data-bar-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .data-bar {
+        padding: 10px 15px;
+        justify-content: center;
+    }
+
+    .data-label {
+        padding: 10px 15px;
+        justify-content: center;
     }
 }

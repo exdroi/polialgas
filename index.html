@@ -21,52 +21,12 @@
 <body>
 
     <!-- Floating Contact Button -->
-    <button id="floating-contact-btn" class="floating-btn" aria-label="Abrir contacto">
-        <i class="fa-solid fa-headset"></i> Contacto
-    </button>
+    <a href="contacto.html" id="floating-contact-btn" class="floating-btn" aria-label="Abrir contacto"
+        style="text-decoration: none;">
+        <i class="fa-solid fa-handshake"></i> Contacto
+    </a>
 
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="close-modal">&times;</span>
-            <h2>Información de Contacto</h2>
-            <p>Ponte en contacto con nosotros para transformar tu agricultura.</p>
-            <div class="contact-details">
-                <a href="https://wa.me/+524441698077" target="_blank" class="contact-item whatsapp-link">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <div>
-                        <strong>WhatsApp</strong>
-                        <span>+52 444 169 8077</span>
-                    </div>
-                </a>
-                <div class="contact-item">
-                    <i class="fa-regular fa-envelope"></i>
-                    <div>
-                        <strong>Correo Electrónico</strong>
-                        <span>polialgas22@gmail.com</span>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <strong>Ubicación</strong>
-                        <span>San Luis Potosí, S.L.P., México</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Info Modal (For extra PDF info) -->
-    <div id="info-modal" class="modal">
-        <div class="modal-content large-modal">
-            <span class="close-btn" id="close-info-modal">&times;</span>
-            <h2 id="info-modal-title">Título</h2>
-            <div id="info-modal-body" class="modal-body-scroll">
-                <!-- Content injected via JS -->
-            </div>
-        </div>
-    </div>
 
     <!-- Header / Hero Section -->
     <header class="hero-section">
@@ -82,8 +42,12 @@
                     cuidando el suelo y el futuro de su tierra.
                 </p>
                 <div class="hero-actions">
-                    <button class="btn btn-primary" onclick="openInfoModal('impact')">Ver Impacto</button>
-                    <button class="btn btn-secondary" onclick="openInfoModal('about')">Conoce Más</button>
+                    <a href="ciencia.html" class="btn btn-primary"
+                        style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Ciencia
+                        e Impacto</a>
+                    <a href="negocio.html" class="btn btn-secondary"
+                        style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Viabilidad
+                        Comercial</a>
                 </div>
             </div>
         </div>
