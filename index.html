@@ -21,10 +21,9 @@
 <body>
 
     <!-- Floating Contact Button -->
-    <a href="contacto.html" id="floating-contact-btn" class="floating-btn" aria-label="Abrir contacto"
-        style="text-decoration: none;">
-        <i class="fa-solid fa-handshake"></i> Contacto
-    </a>
+    <button id="floating-contact-btn" class="floating-btn" data-target-view="view-contacto" aria-label="Abrir contacto">
+        <i class="fa-solid fa-headset"></i> Contacto
+    </button>
 
 
 
@@ -42,10 +41,10 @@
                     cuidando el suelo y el futuro de su tierra.
                 </p>
                 <div class="hero-actions">
-                    <a href="ciencia.html" class="btn btn-primary"
+                    <a href="#" data-target-view="view-ciencia" class="btn btn-primary"
                         style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Ciencia
                         e Impacto</a>
-                    <a href="negocio.html" class="btn btn-secondary"
+                    <a href="#" data-target-view="view-negocio" class="btn btn-secondary"
                         style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Viabilidad
                         Comercial</a>
                 </div>
@@ -224,6 +223,150 @@
             </div>
         </div>
     </footer>
+
+    <div id="view-ciencia" class="page-view-overlay">
+        <button class="btn-circular-back" aria-label="Cerrar y regresar">
+            <i class="fa-solid fa-caret-left"></i>
+        </button>
+        <header class="page-header" style="padding-top: 80px;">
+            <div class="container">
+                <h1 class="page-title">Datos Técnicos Completos</h1>
+                <p>Protocolo de Observación y Resultados del Hidrogel</p>
+            </div>
+        </header>
+        <section class="content-section">
+            <div class="container">
+                <h2>El Protocolo de Observación</h2>
+                <p>Se llevó a cabo un proceso experimental de 14 días para evaluar la eficacia de POLI-ALGAS bajo
+                    condiciones controladas, midiendo retención hídrica y desarrollo vegetal.</p>
+                <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--primary-green);">Metodología</h3>
+                <ul style="margin-bottom: 30px; padding-left: 20px; line-height: 1.8;">
+                    <li><strong>Muestra:</strong> 10 contenedores operativos independientes.</li>
+                    <li><strong>Grupos:</strong> 5 instancias de control exacto vs. 5 sustratos integrados con
+                        POLI-ALGAS.</li>
+                    <li><strong>Variables Controladas:</strong> Igual exposición solar, mismas especificaciones de
+                        matriz de suelo y volúmenes idénticos de agua inicial.</li>
+                    <li><strong>Duración:</strong> 14 días continuos de monitoreo.</li>
+                </ul>
+                <h2>Métricas de Rendimiento</h2>
+                <div class="data-metric">
+                    <h4>Humedad Residual del Suelo (Evaluación al Día 7)</h4>
+                    <div class="data-bar-wrapper">
+                        <div class="data-bar" style="width: 67%;">67%</div>
+                        <div class="data-label">Grupo POLI-ALGAS</div>
+                    </div>
+                    <div class="data-bar-wrapper">
+                        <div class="data-bar control" style="width: 28%;">28%</div>
+                        <div class="data-label">Grupo de Control (Sin Tratamiento)</div>
+                    </div>
+                </div>
+                <div class="data-metric">
+                    <h4>Crecimiento Vegetal Acumulado (Día 14)</h4>
+                    <div class="data-bar-wrapper">
+                        <div class="data-bar" style="width: 100%;">18 cm</div>
+                        <div class="data-label">Grupo POLI-ALGAS</div>
+                    </div>
+                    <div class="data-bar-wrapper">
+                        <div class="data-bar control" style="width: 66%;">12 cm</div>
+                        <div class="data-label">Grupo de Control (Sin Tratamiento)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="view-negocio" class="page-view-overlay">
+        <button class="btn-circular-back" aria-label="Cerrar y regresar">
+            <i class="fa-solid fa-caret-left"></i>
+        </button>
+        <header class="page-header" style="padding-top: 80px;">
+            <div class="container">
+                <h1 class="page-title">Métricas de Mercado y Costos</h1>
+                <p>Análisis comercial y viabilidad de escala</p>
+            </div>
+        </header>
+        <section class="content-section">
+            <div class="container">
+                <h2 style="color: var(--primary-green); margin-bottom: 15px;">Análisis Estadístico de Adopción</h2>
+                <p style="margin-bottom: 30px;">
+                    Basado en datos del <strong>INEGI</strong>, nuestro enfoque regional se centra en <strong>133,190
+                        unidades de producción agrícola activas</strong> que cubren <strong>793,618 hectáreas</strong>
+                    de cultivo. Los objetivos directos incluyen entornos de maíz, chile, tomate, alfalfa y viveros.
+                </p>
+                <h2 style="color: var(--primary-green); margin-bottom: 15px;">Proyecciones de Escala por Ciclo</h2>
+                <p style="margin-bottom: 15px;">Evaluación de perfiles de consumo base y ahorro al disminuir la
+                    frecuencia de riego:</p>
+                <ul style="margin-bottom: 40px; padding-left: 20px; line-height: 1.8;">
+                    <li>Un productor que utiliza 100,000 litros de agua semanales ahorra entre <strong>40,000 y 50,000
+                            litros</strong> por semana.</li>
+                    <li>En un ciclo completo de 4 meses, el ahorro es de <strong>640,000 a 800,000 litros</strong> por
+                        parcela.</li>
+                    <li>Si 100 productores implementan el sistema concurrentemente, se preservan de <strong>64 a 80
+                            millones de litros</strong> de agua.</li>
+                </ul>
+
+                <h2 style="color: var(--primary-green); margin-top: 40px; margin-bottom: 15px;">Cumplimiento Regulatorio
+                    de Insumos Nutritivos</h2>
+                <ul style="padding-left: 20px; line-height: 1.8;">
+                    <li><strong>NOM-077-FITO-2000:</strong> Evaluación de efectividad para insumos de nutrición vegetal.
+                    </li>
+                    <li><strong>NOM-182-SSA1-2010:</strong> Directrices toxicológicas para el etiquetado de insumos.
+                    </li>
+                    <li><strong>Gestión de Marca:</strong> Proceso en curso ante el IMPI para la protección de la marca
+                        registrada.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div id="view-contacto" class="page-view-overlay">
+        <button class="btn-circular-back" aria-label="Cerrar y regresar">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <header class="page-header" style="padding-top: 80px;">
+            <div class="container">
+                <h1 class="page-title">Información de Contacto</h1>
+                <p>Ponte en contacto con nosotros para transformar tu agricultura.</p>
+            </div>
+        </header>
+        <section class="content-section">
+            <div class="container">
+                <div class="contact-details-grid">
+                    <a href="https://wa.me/+524441698077" target="_blank" class="contact-card-link whatsapp-accent">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <strong style="display: block; font-size: 0.9rem;">WhatsApp</strong>
+                            <span style="font-size: 1.2rem; font-weight: 600;">+52 444 169 8077</span>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:polialgas22@gmail.com" class="contact-card-link">
+                        <i class="fa-regular fa-envelope"></i>
+                        <div>
+                            <strong style="display: block; font-size: 0.9rem;">Correo Electrónico</strong>
+                            <span style="font-size: 1.1rem; font-weight: 600;">polialgas22@gmail.com</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=San+Luis+Potosí,+S.L.P.,+México" target="_blank" class="contact-card-link">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong style="display: block; font-size: 0.9rem;">Ubicación</strong>
+                            <span style="font-size: 1.1rem; font-weight: 600;">San Luis Potosí, S.L.P., México</span>
+                        </div>
+                    </a>
+
+                    <a href="http://www.polialgas.com" target="_blank" class="contact-card-link">
+                        <i class="fa-solid fa-globe"></i>
+                        <div>
+                            <strong style="display: block; font-size: 0.9rem;">Sitio Web</strong>
+                            <span style="font-size: 1.1rem; font-weight: 600;">www.polialgas.com</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>

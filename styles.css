@@ -96,11 +96,11 @@ h4,
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #25D366;
+    background-color: var(--accent-green);
     /* WhatsApp color */
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     /* Diseño más plano */
     padding: 15px 25px;
     font-size: 1.1rem;
@@ -129,12 +129,16 @@ h4,
 .hero-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 40px;
 }
 
 .hero-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     max-width: 650px;
     z-index: 2;
 }
@@ -820,5 +824,175 @@ h4,
     .data-label {
         padding: 10px 15px;
         justify-content: center;
+    }
+}
+
+/* --- ANIMATIONS AND MICRO-INTERACTIONS --- */
+html {
+    scroll-behavior: smooth;
+}
+
+.btn,
+.benefit-card,
+.step-circle,
+.ideal-item,
+.pres-item,
+.footer-link,
+.floating-btn {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+        background-color 0.3s ease,
+        box-shadow 0.4s ease !important;
+}
+
+.benefit-card:hover,
+.ideal-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card:hover .icon-wrapper,
+.ideal-item:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.btn:active,
+.benefit-card:active {
+    transform: scale(0.97);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fillGraph {
+    from {
+        width: 0%;
+    }
+}
+
+.data-bar {
+    animation: fillGraph 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* --- FULLSCREEN PAGE VIEW OVERLAYS --- */
+.page-view-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-bg);
+    z-index: 5000;
+    overflow-y: auto;
+
+    /* Core Morphing States */
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.85);
+    /* Default shrunken state */
+    transform-origin: center;
+    /* Will be dynamically updated via JS to click origin */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.4s ease;
+}
+
+/* Active Expanded State */
+.page-view-overlay.is-expanded {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+/* --- THE CIRCULAR SHRINK BACK BUTTON --- */
+.btn-circular-back {
+    position: sticky;
+    top: 20px;
+    left: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    z-index: 5100;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* Hover and Mobile Interaction States */
+.btn-circular-back:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+.btn-circular-back:active {
+    transform: scale(0.88);
+    /* Shrinking feel when pressed */
+}
+
+/* --- CONTACT CARD PRESENTATION LAYOUTS --- */
+.contact-details-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-card-link,
+.contact-card-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.contact-card-link:active {
+    transform: scale(0.98);
+}
+
+.contact-card-link i,
+.contact-card-info i {
+    font-size: 2rem;
+    color: var(--primary-green);
+}
+
+/* Subtle specific branding accents */
+.whatsapp-accent:hover {
+    background-color: #f2fcf5;
+}
+.whatsapp-accent i {
+    color: #25D366;
+}
+
+@media (min-width: 1024px) {
+    .contact-details-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
     }
 }
