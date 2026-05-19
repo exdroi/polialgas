@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLI-ALGAS | Hidrogel Biodegradable</title>
+    <meta name="description"
+        content="POLI-ALGAS: Hidrogel biodegradable a base de algas para una agricultura eficiente y sostenible. Ahorra agua y mejora la productividad.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Floating Contact Button -->
+    <button id="floating-contact-btn" class="floating-btn" aria-label="Abrir contacto">
+        <i class="fa-solid fa-headset"></i> Contacto
+    </button>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Información de Contacto</h2>
+            <p>Ponte en contacto con nosotros para transformar tu agricultura.</p>
+            <div class="contact-details">
+                <a href="https://wa.me/+524441698077" target="_blank" class="contact-item whatsapp-link">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <strong>WhatsApp</strong>
+                        <span>+52 444 169 8077</span>
+                    </div>
+                </a>
+                <div class="contact-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div>
+                        <strong>Correo Electrónico</strong>
+                        <span>polialgas22@gmail.com</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Ubicación</strong>
+                        <span>San Luis Potosí, S.L.P., México</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Modal (For extra PDF info) -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content large-modal">
+            <span class="close-btn" id="close-info-modal">&times;</span>
+            <h2 id="info-modal-title">Título</h2>
+            <div id="info-modal-body" class="modal-body-scroll">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Hero Section -->
+    <header class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <img src="documentos/POLI-ALGAS (3)_page-0001.jpg" alt="POLI-ALGAS Logo" class="hero-logo"
+                    onerror="this.src='logo.png'; this.onerror=null;">
+                <h1 class="main-title">POLI-ALGAS</h1>
+                <h2 class="subtitle">HIDROGEL BIODEGRADABLE A BASE DE ALGAS</h2>
+                <div class="badge">PARA UNA AGRICULTURA EFICIENTE Y SOSTENIBLE</div>
+                <p class="mission">
+                    <strong>Nuestra misión:</strong> Ayudar a los productores a producir más, usando menos agua,
+                    cuidando el suelo y el futuro de su tierra.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openInfoModal('impact')">Ver Impacto</button>
+                    <button class="btn btn-secondary" onclick="openInfoModal('about')">Conoce Más</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>AHORRA AGUA</h3>
+                    <p>Reduce hasta 50% la frecuencia de riego.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>MEJORA EL SUELO</h3>
+                    <p>Aumenta la retención de humedad y nutrientes.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>MÁS PRODUCTIVIDAD</h3>
+                    <p>Mejores rendimientos y cultivos más sanos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>BIODEGRADABLE</h3>
+                    <p>No genera residuos tóxicos ni contamina.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>SOSTENIBLE</h3>
+                    <p>Hecho con algas y biomateriales naturales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section class="how-it-works dark-bg">
+        <div class="container">
+            <h2 class="section-title text-white">¿CÓMO FUNCIONA?</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-circle"><i class="fa-solid fa-water"></i></div>
+                    <p>Absorbe agua</p>
+                </div>
+                <i class="fa-solid fa-arrow-right step-arrow"></i>
+                <div class="step">
+                    <div class="step-circle"><i class="fa-solid fa-expand"></i></div>
+                    <p>Se expande hasta 100x su peso</p>
+                </div>
+                <i class="fa-solid fa-arrow-right step-arrow"></i>
+                <div class="step">
+                    <div class="step-circle"><i class="fa-solid fa-box-archive"></i></div>
+                    <p>Almacena humedad y nutrientes</p>
+                </div>
+                <i class="fa-solid fa-arrow-right step-arrow"></i>
+                <div class="step">
+                    <div class="step-circle"><i class="fa-solid fa-hand-holding-droplet"></i></div>
+                    <p>Libera agua gradualmente</p>
+                </div>
+                <i class="fa-solid fa-arrow-right step-arrow"></i>
+                <div class="step">
+                    <div class="step-circle"><i class="fa-solid fa-plant-wilt"></i></div>
+                    <p>La planta absorbe agua y nutrientes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section (Ideal & Presentations) -->
+    <section class="details-section">
+        <div class="container">
+            <div class="details-grid">
+
+                <div class="ideal-for">
+                    <h3 class="subsection-title">IDEAL PARA:</h3>
+                    <div class="ideal-icons">
+                        <div class="ideal-item">
+                            <i class="fa-solid fa-tractor"></i>
+                            <span>Agricultores</span>
+                        </div>
+                        <div class="ideal-item">
+                            <i class="fa-solid fa-tree"></i>
+                            <span>Viveros y jardinería</span>
+                        </div>
+                        <div class="ideal-item">
+                            <i class="fa-solid fa-sun"></i>
+                            <span>Zonas áridas y semiáridas</span>
+                        </div>
+                        <div class="ideal-item">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <span>Programas gubernamentales</span>
+                        </div>
+                        <div class="ideal-item">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>Empresas y proyectos verdes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="presentations">
+                    <h3 class="subsection-title">PRESENTACIONES</h3>
+                    <div class="pres-icons">
+                        <div class="pres-item">
+                            <div class="bag-icon"><i class="fa-solid fa-sack-xmark"></i></div>
+                            <span>5 kg</span>
+                        </div>
+                        <div class="pres-item">
+                            <div class="bag-icon large"><i class="fa-solid fa-sack-xmark"></i></div>
+                            <span>25 kg</span>
+                        </div>
+                        <div class="pres-item">
+                            <div class="bag-icon xlarge"><i class="fa-solid fa-sack-xmark"></i></div>
+                            <span>50 kg</span>
+                        </div>
+                        <div class="pres-item">
+                            <div class="bag-icon bulk"><i class="fa-solid fa-truck"></i></div>
+                            <span>A GRANEL (+250 kg)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Bottom Contact Strip -->
+    <footer class="footer-strip dark-bg">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact-info">
+                    <span class="contact-title">CONTACTO</span>
+                    <a href="https://wa.me/+524441698077" class="footer-link"><i class="fa-brands fa-whatsapp"></i> 444
+                        169 8077</a>
+                    <a href="mailto:polialgas22@gmail.com" class="footer-link"><i class="fa-regular fa-envelope"></i>
+                        polialgas22@gmail.com</a>
+                    <span class="footer-text"><i class="fa-solid fa-location-dot"></i> San Luis Potosí, S.L.P.,
+                        México</span>
+                    <a href="#" class="footer-link"><i class="fa-solid fa-globe"></i> www.polialgas.com</a>
+                </div>
+            </div>
+
+            <div class="footer-features">
+                <div class="feat">
+                    <i class="fa-solid fa-flask"></i>
+                    <div>
+                        <strong>FÓRMULA INNOVADORA</strong>
+                        <span>con algas y biomateriales</span>
+                    </div>
+                </div>
+                <div class="feat">
+                    <i class="fa-solid fa-microscope"></i>
+                    <div>
+                        <strong>CIENCIA Y NATURALEZA</strong>
+                        <span>trabajando para tu cultivo</span>
+                    </div>
+                </div>
+                <div class="feat">
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <div>
+                        <strong>DESARROLLADO EN MÉXICO</strong>
+                        <span>para los retos de nuestra tierra</span>
+                    </div>
+                </div>
+                <div class="feat">
+                    <i class="fa-solid fa-gear"></i>
+                    <div>
+                        <strong>TECNOLOGÍA SOSTENIBLE</strong>
+                        <span>para un futuro mejor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
