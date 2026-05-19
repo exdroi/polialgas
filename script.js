@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Si 100 productores implementaran POLI-ALGAS, el ahorro representaría entre 64 y 80 millones de litros por ciclo.</li>
                 </ul>
                 <h3>Sostenibilidad y Medio Ambiente</h3>
-                <p>POLI-ALGAS promueve prácticas más eficientes y está inscrito en la categoría de Comunidades y Ciudades Sostenibles. Utilizamos biomateriales que no generan residuos tóxicos, contribuyendo a la disminución del impacto ambiental.</p>
+                <p>Utilizamos biomateriales que no generan residuos tóxicos, contribuyendo a la disminución del impacto ambiental.</p>
             `
         },
         about: {
@@ -57,15 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <h3>Nuestra Solución</h3>
                 <p>POLI-ALGAS es un hidrogel biodegradable a base de algas. Nuestro modelo de negocios se enfoca en pequeños y medianos productores agrícolas. Buscamos ofrecer una alternativa que permita conservar humedad, reducir costos relacionados con el riego y mantener la productividad en condiciones de estrés climático.</p>
-                
-                <h3>Mercado Objetivo</h3>
-                <p>Agricultores que buscan innovación y eficiencia ante sequías recurrentes y altas temperaturas, asegurando un mejor futuro para sus cultivos y la tierra.</p>
             `
         }
     };
 
-    window.openInfoModal = function(type) {
-        if(modalContent[type]) {
+    window.openInfoModal = function (type) {
+        if (modalContent[type]) {
             infoModalTitle.innerHTML = modalContent[type].title;
             infoModalBody.innerHTML = modalContent[type].body;
             infoModal.classList.add('show');
