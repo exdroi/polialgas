@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b4b2f">
+  <meta name="description" content="Calculadora orientativa de POLI-ALGAS para estimar capacidad, dosis inicial y un plan de riego responsable.">
+  <title>Calculadora de dosis | POLI-ALGAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="calculator-page">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header solid" data-header>
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="POLI-ALGAS, inicio">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M25 42C10 37 7 23 13 9c12 2 20 9 20 19 0 7-3 11-8 14Z"/><path d="M25 41c-1-13-4-21-10-27"/><path d="M29 31c1-8 6-13 14-15 2 9-3 16-14 15Z"/></svg></span>
+        <span><strong>POLI-ALGAS</strong><small>AGUA EN VIDA</small></span>
+      </a>
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Volver al inicio</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="calculator-hero">
+      <div class="container calculator-intro">
+        <p class="eyebrow eyebrow-light"><span></span> Calculadora orientativa</p>
+        <h1>Una dosis pensada para tu planta.</h1>
+        <p>Usa el consumo de agua que ya conoces para estimar la capacidad equivalente de POLI-ALGAS y comenzar con un rango prudente.</p>
+      </div>
+    </section>
+
+    <section class="calculator-workspace">
+      <div class="container calculator-grid">
+        <form class="calculator-form" id="dose-form" novalidate>
+          <div class="form-heading">
+            <span class="form-step">01</span>
+            <div><h2>Cuéntanos sobre tu planta</h2><p>Todos los cálculos se realizan en tu dispositivo.</p></div>
+          </div>
+
+          <label class="field field-wide">
+            <span>Nombre de la planta <small>opcional</small></span>
+            <input id="plant-name" name="plantName" type="text" maxlength="40" placeholder="Ej. Monstera">
+          </label>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Agua por riego</span>
+              <div class="input-unit"><input id="water-ml" name="waterMl" type="number" min="10" max="100000" step="1" value="297" inputmode="decimal" required><span>ml</span></div>
+            </label>
+            <label class="field">
+              <span>Frecuencia habitual</span>
+              <div class="input-unit"><input id="interval-days" name="intervalDays" type="number" min="1" max="90" step="1" value="10" inputmode="numeric" required><span>días</span></div>
+            </label>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Tipo de planta</span>
+              <select id="plant-type" name="plantType">
+                <option value="standard">Follaje o uso general</option>
+                <option value="flowering">Floración o huerto</option>
+                <option value="succulent">Cactus o suculenta</option>
+                <option value="unknown">No estoy seguro</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Drenaje de la maceta</span>
+              <select id="drainage" name="drainage">
+                <option value="good">Sí, drena bien</option>
+                <option value="limited">Drena lentamente</option>
+                <option value="none">No tiene orificio</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="choice-group">
+            <legend>¿El sustrato ya contiene POLI-ALGAS?</legend>
+            <label><input type="radio" name="hasProduct" value="no" checked><span>No, será la primera aplicación</span></label>
+            <label><input type="radio" name="hasProduct" value="yes"><span>Sí, ya fue aplicado</span></label>
+          </fieldset>
+
+          <button class="button button-primary button-full" type="submit">Calcular dosis orientativa <span aria-hidden="true">→</span></button>
+          <p class="form-error" id="form-error" role="alert" hidden>Revisa que el agua y los días sean mayores a cero.</p>
+        </form>
+
+        <section class="calculator-result" aria-live="polite" aria-labelledby="result-title">
+          <div class="result-topline"><span>Resultado</span><span id="result-status" class="status-pill">Rango inicial</span></div>
+          <p class="result-kicker" id="result-plant">Para tu planta</p>
+          <h2 id="result-title"><strong id="dose-range">1.0–1.5 g</strong> para comenzar</h2>
+          <p class="result-summary" id="result-summary">Tu consumo equivale a un máximo teórico de 2.0 g. Empieza con una parte del máximo y observa el comportamiento del sustrato.</p>
+
+          <div class="result-cards">
+            <article><span>Capacidad equivalente</span><strong id="theoretical-dose">2.0 g</strong><small>297 ml ÷ 150 ml/g</small></article>
+            <article><span>Retención del rango</span><strong id="retained-water">150–225 ml</strong><small>capacidad estimada</small></article>
+            <article><span>Revisión de humedad</span><strong id="next-check">Día 8</strong><small>antes del próximo riego</small></article>
+          </div>
+
+          <div class="hydration-meter" aria-label="Nivel de precaución de la dosis">
+            <div class="meter-labels"><span>Prudente</span><span>Límite calculado</span></div>
+            <div class="meter-track"><span id="meter-fill"></span><i id="meter-limit"></i></div>
+          </div>
+
+          <div class="result-plan">
+            <h3>Tu plan de aplicación</h3>
+            <ol id="result-plan-list">
+              <li><span>1</span><p>Mezcla <strong>1.0 a 1.5 g</strong> en la zona de raíces; no lo dejes concentrado en un solo punto.</p></li>
+              <li><span>2</span><p>Riega poco a poco, en dos pasadas, y deja salir el excedente por el drenaje.</p></li>
+              <li><span>3</span><p>Revisa la humedad cerca del día 8. Si el sustrato continúa húmedo, espera 24–48 horas.</p></li>
+            </ol>
+          </div>
+
+          <div class="safety-alert" id="safety-alert"><strong>No repitas la dosis cada 10 días.</strong> El producto permanece en el sustrato y vuelve a hidratarse con los riegos posteriores.</div>
+        </section>
+      </div>
+    </section>
+
+    <section class="calculator-notes">
+      <div class="container notes-grid">
+        <article><span>01</span><h3>Capacidad no significa dosis</h3><p>Los 150 ml por gramo expresan cuánto puede retener el producto, pero la cantidad ideal también depende del sustrato, drenaje, sales y especie.</p></article>
+        <article><span>02</span><h3>Observa antes de regar</h3><p>Introduce un dedo 2–3 cm en el sustrato. Si está húmedo, pospón el riego; si está apenas seco, riega gradualmente.</p></article>
+        <article><span>03</span><h3>Evita la saturación</h3><p>No uses POLI-ALGAS en recipientes sin salida de agua. El exceso de humedad puede reducir el oxígeno disponible para las raíces.</p></article>
+      </div>
+      <div class="container calculator-disclaimer">Esta herramienta ofrece una estimación inicial y no sustituye una recomendación agronómica. Para cultivos comerciales, grandes superficies o especies sensibles, solicita acompañamiento técnico.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer compact-footer">
+    <div class="container footer-bottom"><span>© 2026 POLI-ALGAS</span><a href="mailto:polialgas22@gmail.com">polialgas22@gmail.com</a></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
